@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#"><img src="https://www.clipartmax.com/png/middle/134-1349206_nba-logo-png-transparent-background-nba-logo-transparent-background.png" style="width: 50px; height: 50px" class="img-fluid" alt="NBAlogo">Statistika NBA igrača</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Igrači</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Timovi</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="#">Skauti</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 justify-content-end">
+        <a href="#" class="btn btn-primary">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </form>
+    </div>
+  </nav>
+
+<div class="container">
+    <p class="my-5 korisnik-p">Izmeni igraca</p>
+
+    <form action="#" method="POST">
+
+        <div class="row col-4 korisnik-input form-group">
+            <label for="nameInput">Ime</label>
+            <input type="text" class="form-control" id="nameInput" name="ime" value="" required>
+        </div>
+
+        <div class="row col-4 korisnik-input">
+            <label for="nameInput">Prezime</label>
+            <input type="text" class="form-control" id="prezimeInput" name="prezime" value=""
+                required>
+        </div>
+
+        <div class="row col-4 korisnik-input">
+            <label for="nameInput">Tim</label>
+            <input type="text" class="form-control" id="timInput" name="tim" value="" required>
+        </div>
+        <div class="row col-4 korisnik-input">
+            <label for="nameInput">Agent</label>
+            <input type="text" class="form-control" id="agentInput" name="agent" value="" required>
+        </div>
+
+       
+
+        
+
+        <input type="submit" id="dodajSubmit" class="btn btn-primary my-2" value="Submit">
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content%}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#"><img src="https://www.clipartmax.com/png/middle/134-1349206_nba-logo-png-transparent-background-nba-logo-transparent-background.png" style="width: 50px; height: 50px" class="img-fluid" alt="NBAlogo">Statistika NBA igrača</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('render_igraci')}}">Igrači</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Timovi</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link " href="{{ url_for('render_skauti')}}">Skauti</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0 justify-content-end">
+            <a href="{{ url_for('login')}}" class="btn btn-primary">
+                <i class="fa-solid fa-right-from-bracket"></i>
+            </a>
+          </form>
+        </div>
+      </nav>
+    <div class="container"> 
+    <div class="row my-5 justify-content-end">
+        <a href="#" role="button" class="btn btn-primary">Dodaj tim</a>
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Grad</th>
+            <th scope="col">Naziv</th>
+            <th scope="col">Konferencija</th>
+            <th scope="col">Izmeni/Obrisi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for tim in timovi %}
+          <tr>
+              <th scope="row">{{tim.Id}}</th>
+              <td>{{tim.Grad}}</td>
+              <td>{{tim.Naziv}}</td>
+              <td>{{tim.Konferencija}}</td>
+              <td style="display: flex; flex-direction: row;">
+                  <a href="{{ url_for('render_izmeniTim', id=tim.id ) }}" role="button"
+                      class="text-warning mx-1">
+                      <i class="far fa-edit"></i>
+                  </a>
+                  <form action="{{ url_for('render_izbrisiTim', id=tim.id) }}" method="POST"
+                      class="text-danger mx-1" style="background-color: transparent;">
+                      <button class="text-danger mx-1" style=" border: none; background:transparent;">
+                          <i class="far fa-trash-alt"></i>
+                      </button>
+                  </form>
+              </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+      </table>
+      </div>
+  </div>
+{% endblock %}

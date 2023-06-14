@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href=""><img src="https://www.clipartmax.com/png/middle/134-1349206_nba-logo-png-transparent-background-nba-logo-transparent-background.png" style="width: 50px; height: 50px" class="img-fluid" alt="NBAlogo">Statistika NBA igrača</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Igrači</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Timovi</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link " href="#">Skauti</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 justify-content-end">
+        <a href="#" class="btn btn-primary">
+            <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
+      </form>
+    </div>
+  </nav>
+
+<div class="container">
+    <p class="my-5 korisnik-p">Novi igrac</p>
+
+    <form action="#" method="POST">
+
+        <div class="row col-4  form-group">
+            <label for="ImeInput">Ime</label>
+            <input type="text" class="form-control" id="ImeInput" name="ImeInput" required>
+        </div>
+
+        <div class="row col-4 ">
+            <label for="PrezimeInput">Prezime</label>
+            <input type="text" class="form-control" id="PrezimeInput" name="PrezimeInput" required>
+        </div>
+
+        <div class="row col-4 ">
+            <label for="GodinaRodjenjaInput">Godina rodjenja</label>
+            <input type="text" class="form-control" id="GodinaRodjenjaInput" name="GodinaRodjenjaInput" required>
+        </div>
+        <div class="row col-4 ">
+          <label for="BrojDresaInput">Broj dresa</label>
+          <input type="text" class="form-control" id="BrojDresaInput" name="BrojDresaInput" required>
+      </div>
+      <div class="row col-4 ">
+        <label for="ProsecanBrojPoenaInput">Prosek poena</label>
+        <input type="text" class="form-control" id="ProsecanBrojPoenaInput" name="ProsecanBrojPoenaInput" required>
+      </div>
+      <div class="row col-4 ">
+        <label for="AgentIDInput">Agent</label>
+        <input type="text" class="form-control" id="AgentIDInput" name="AgentIDInput" required>
+      </div>
+      <div class="row col-4 ">
+        <label for="TimIDInput">Tim</label>
+        <input type="text" class="form-control" id="TimIDInput" name="TimIDInput" required>
+      </div>
+        <div style="align-content: left;">
+          <input type="submit" id="dodajSubmit" class="btn btn-primary my-2" value="Submit">
+        </div>
+    </form>
+</div>
+{% endblock %}
